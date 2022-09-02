@@ -65,8 +65,18 @@ calculadora "pow" (x,y) = x^(y)     -- Devuelve la potencia de la tupla
 
 
 -- Ejercicio 6
+-- Función que decide si Loki sale a jugar o no recibiendo dos parametros
+--     Un entero que es la temperatura
+--     Un booleano que nos indica si es verano o no
+-- Recibe: Un entero y un boleano
+-- Devuelve: Un string con la leyenda de si Loki puede salir a jugar
+-- Uso: < loki 35 False >  
+-- Uso: < loki 20 False >  
+
 loki :: Int -> Bool -> String
-loki = error "Definir el cuerpo de la función"
+loki x y = if( ((15 < x) && (x < 25)) && y == False) then "Sale a Jugar" else 
+           if( ((20 < x) && (x < 30)) && y == True) then "Sale a Jugar" else "No sale a Jugar"
+
 
 -- Ejercicio 7
 -- Funcion que calcula de cuantas formas un niño puede subir escaleras 
@@ -118,10 +128,9 @@ perfectos s = filter esPerfecto s
         esPerfecto n = n == sum [i | i <- [1..n-1], n `mod` i == 0]
 
 
-
 -- Ejercicio 9  (b)
 aproxima :: Float -> Float
-aproxima = error "Definir el cuerpo de la función"
+aproxima = error "Ejercicio No resuelto"
 
 
 -- Ejercicio 10 
@@ -151,13 +160,3 @@ area (Rectangulo a b) = a*b
 area (Rombo dm d) = (dm*d)/2
 area (Paralelogramo a b h) = b*h
 area (Elipse a b) = pi*a*b
-
-main = do
-  putStrLn "Hello"
-  --putStrLn "World"
-  print (impl True False)
-  print (calculadora "div" (20, 3))
-  print (numeroFormas 4)
-  print (divisoresPropios 45)
-  print (cribaEratostenes 20)
-  print (perfectos [1,2,4,6,496,8128,90000])
